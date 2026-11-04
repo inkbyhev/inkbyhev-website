@@ -1,0 +1,9 @@
+INK BY HEV — WEBSITE PREVIEW
+
+1. Extract/unzip the entire folder first.
+2. Keep index.html and the assets folder together.
+3. Double-click index.html to preview.
+4. Click video thumbnails to play videos.
+
+Do not open index.html from inside the ZIP or move it outside its folder.
+Booking and shop checkout are not yet active.
