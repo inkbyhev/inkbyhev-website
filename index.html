@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width,initial-scale=1" name="viewport"/><meta content="#102b26" name="theme-color"/><title>Ink by Hev — Tattoo Artist &amp; Illustrator</title><style>
+:root{--bg:#102b26;--surface:#173a33;--cream:#eee4d2;--muted:#c3c9bd;--gold:#d4a96b}*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--cream);font-family:Arial,Helvetica,sans-serif;line-height:1.55}a{color:inherit;text-decoration:none}header{display:flex;justify-content:space-between;align-items:center;padding:20px max(24px,6vw);border-bottom:1px solid #ffffff24;gap:18px;flex-wrap:wrap}header strong{font-family:Georgia,serif;letter-spacing:.1em;font-size:21px}nav{display:flex;gap:20px;flex-wrap:wrap;font-size:13px;letter-spacing:.07em}nav a:hover{color:var(--gold)}.hero{position:relative;text-align:center;min-height:590px;padding:45px 20px 80px;background:radial-gradient(ellipse at 50% 30%,#28534a 0%,#102b26 65%);overflow:hidden}.hero:before,.hero:after{content:'✦  ❧  ✦';position:absolute;top:25%;color:#d4a96b55;font:36px Georgia,serif}.hero:before{left:5%}.hero:after{right:5%}.logo{width:min(260px,65vw);height:300px;object-fit:contain;filter:drop-shadow(0 14px 30px #0005)}h1,h2,h3{font-family:Georgia,serif;font-weight:normal}h1{font-size:clamp(44px,7vw,78px);letter-spacing:.045em;margin:0}h2{font-size:clamp(32px,4vw,48px);margin:0 0 12px}.sub{letter-spacing:.18em;text-transform:uppercase;font-size:13px;color:var(--gold)}.location{color:var(--muted);margin:8px 0 28px}.actions{display:flex;justify-content:center;gap:12px;flex-wrap:wrap}.btn{display:inline-block;padding:13px 23px;border:1px solid var(--gold);font-size:12px;text-transform:uppercase;letter-spacing:.1em}.btn.primary{background:var(--gold);color:#182b25}.btn:hover{filter:brightness(1.12)}section{padding:75px max(22px,7vw)}.intro{text-align:center;max-width:730px;margin:auto}.eyebrow{color:var(--gold);text-transform:uppercase;letter-spacing:.2em;font-size:11px}.sectionhead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:24px}.sectionhead p{margin:0;color:var(--muted)}.gallery{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}.tile{background:var(--surface);aspect-ratio:3/4;overflow:hidden;cursor:pointer;border:0;padding:0}.tile img{width:100%;height:100%;object-fit:cover;transition:transform .3s}.tile:hover img{transform:scale(1.04)}.filters{display:flex;gap:8px;flex-wrap:wrap;margin:20px 0 26px}.filter{background:transparent;border:1px solid #d4a96b66;color:var(--cream);padding:9px 12px;cursor:pointer}.filter.active{background:var(--gold);color:#142a24}.muted{color:var(--muted)}.split{display:grid;grid-template-columns:1fr 1fr;gap:28px}.panel{background:var(--surface);padding:36px;border:1px solid #d4a96b30}.panel h2{font-size:35px}.panel a{text-decoration:underline;text-underline-offset:5px;color:var(--gold)}footer{border-top:1px solid #ffffff22;text-align:center;padding:30px;color:var(--muted);font-size:13px}dialog{border:0;background:#071712;color:white;max-width:min(90vw,900px);padding:15px}dialog img{display:block;max-width:100%;max-height:80vh;object-fit:contain}dialog::backdrop{background:#000c}.close{float:right;margin-bottom:10px;background:var(--gold);border:0;padding:8px 12px;cursor:pointer}@media(max-width:850px){.gallery{grid-template-columns:repeat(2,minmax(0,1fr))}.split{grid-template-columns:1fr}.hero:before,.hero:after{display:none}}@media(max-width:480px){header{justify-content:center;text-align:center}nav{justify-content:center;gap:12px}.gallery{gap:8px}.hero{min-height:0}.logo{height:230px}section{padding:50px 20px}}
+
+.tile[hidden]{display:none!important}.video-tile{position:relative}.play-icon{position:absolute;inset:0;display:grid;place-items:center;color:white;font-size:36px;text-shadow:0 2px 12px black;pointer-events:none}dialog video{max-width:100%;max-height:80vh;display:block}dialog img[hidden],dialog video[hidden]{display:none}.consult-form{max-width:800px;margin:32px auto 0;min-height:500px}.consult-form iframe{display:block;width:100%;border:0} </style></head><body><header><a href="#home"><strong>INK BY HEV</strong></a><nav aria-label="Main navigation"><a href="#tattoos">Tattoos</a><a href="#studio">Art Studio</a><a href="#shop">Shop</a><a href="#booking">Booking</a><a href="#about">About</a></nav></header><main><div class="hero" id="home"><img alt="Ink by Hev dragon logo" class="logo" src="assets/logo.png"/><h1>INK BY HEV</h1><div class="sub">Tattoo Artist &amp; Illustrator</div><p class="location">Marietta, Georgia</p><div class="actions"><a class="btn primary" href="#tattoos">View Portfolio</a><a class="btn" href="#booking">Request an Appointment</a></div></div><section class="intro" id="about"><div class="eyebrow">About the artist</div><h2>Art with personality.</h2><p class="muted">I'm Hev, a tattoo artist and illustrator based in Marietta, Georgia. My work ranges from colorful, playful designs to darker illustrative pieces. Explore my tattoos and other artwork below.</p></section><section id="tattoos"><div class="sectionhead"><div><div class="eyebrow">Selected work</div><h2>Tattoo Portfolio</h2><p>Photos from recent projects. More work coming soon.</p></div></div><div aria-label="Filter tattoos" class="filters"><button class="filter active" data-filter="all">All Work</button><button class="filter" data-filter="color">Color</button><button class="filter" data-filter="black-grey">Black &amp; Grey</button></div><div class="gallery"><button aria-label="Open tattoo photo 1" class="tile" data-tags="color"><img alt="Tattoo portfolio piece 1" loading="lazy" src="assets/tattoo-1.webp"/></button><button aria-label="Open tattoo photo 2" class="tile" data-tags="color"><img alt="Tattoo portfolio piece 2" loading="lazy" src="assets/tattoo-2.webp"/></button><button aria-label="Open tattoo photo 3" class="tile" data-tags="black-grey"><img alt="Tattoo portfolio piece 3" loading="lazy" src="assets/tattoo-3.webp"/></button><button aria-label="Open tattoo photo 4" class="tile" data-tags="nature color"><img alt="Tattoo portfolio piece 4" loading="lazy" src="assets/tattoo-4.webp"/></button><button aria-label="Open tattoo photo 5" class="tile" data-tags="black-grey"><img alt="Tattoo portfolio piece 5" loading="lazy" src="assets/tattoo-5.webp"/></button><button aria-label="Open tattoo photo 6" class="tile" data-tags="color"><img alt="Tattoo portfolio piece 6" loading="lazy" src="assets/tattoo-6.webp"/></button><button aria-label="Open tattoo photo 7" class="tile" data-tags="black-grey"><img alt="Tattoo portfolio piece 7" loading="lazy" src="assets/tattoo-7.webp"/></button><button aria-label="Open tattoo photo 8" class="tile" data-tags="color"><img alt="Tattoo portfolio piece 8" loading="lazy" src="assets/tattoo-8.webp"/></button><button aria-label="Open tattoo photo 9" class="tile" data-tags="color"><img alt="Tattoo portfolio piece 9" loading="lazy" src="assets/tattoo-9.webp"/></button><button aria-label="Open tattoo photo 10" class="tile" data-tags="black-grey"><img alt="Tattoo portfolio piece 10" loading="lazy" src="assets/tattoo-10.webp"/></button><button aria-label="Play tattoo video 1" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-1.mp4"><img alt="Tattoo video 1 thumbnail" loading="lazy" src="assets/video-1.jpg"/><span class="play-icon">▶</span></button><button aria-label="Play tattoo video 2" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-2.mp4"><img alt="Tattoo video 2 thumbnail" loading="lazy" src="assets/video-2.jpg"/><span class="play-icon">▶</span></button><button aria-label="Play tattoo video 3" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-3.mp4"><img alt="Tattoo video 3 thumbnail" loading="lazy" src="assets/video-3.jpg"/><span class="play-icon">▶</span></button><button aria-label="Play tattoo video 4" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-4.mp4"><img alt="Tattoo video 4 thumbnail" loading="lazy" src="assets/video-4.jpg"/><span class="play-icon">▶</span></button><button aria-label="Play tattoo video 5" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-5.mp4"><img alt="Tattoo video 5 thumbnail" loading="lazy" src="assets/video-5.jpg"/><span class="play-icon">▶</span></button><button aria-label="Play tattoo video 6" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-6.mp4"><img alt="Tattoo video 6 thumbnail" loading="lazy" src="assets/video-6.jpg"/><span class="play-icon">▶</span></button><button aria-label="Play tattoo video 7" class="tile video-tile" data-tags="color black-grey" data-video="assets/video-7.mp4"><img alt="Tattoo video 7 thumbnail" loading="lazy" src="assets/video-7.jpg"/><span class="play-icon">▶</span></button></div></section><section class="split"><div class="panel" id="studio"><div class="eyebrow">Art Studio</div><h2>The Atelier</h2><p class="muted">Paintings, illustrations, works in progress, and experiments beyond tattooing.</p><p class="muted">Studio gallery and process videos coming next.</p></div><div class="panel" id="shop"><div class="eyebrow">Shop</div><h2>Art &amp; Prints</h2><p class="muted">Prints, original artwork, and occasional handmade pieces.</p><p class="muted">Shop opening later. No checkout is connected yet.</p></div></section><section id="booking"><div class="intro"><div class="eyebrow">Booking &amp; Contact</div><h2>Have A Tattoo Idea?</h2><p class="muted">Tell me about your tattoo idea using the consultation form below. Consultations are free, and preferred dates are not guaranteed. Appointment deposits are collected through Divine Rites Tattoo only after booking is confirmed.</p></div><div class="consult-form"><iframe title="Tattoo Consultation Request" data-tally-src="https://tally.so/embed/RWdKeP?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1" loading="lazy" width="100%" height="950" frameborder="0" marginheight="0" marginwidth="0" scrolling="no"></iframe></div><script>var d=document,w="https://tally.so/widgets/embed.js";if(!d.querySelector('script[src="'+w+'"]')){var s=d.createElement('script');s.src=w;s.async=true;d.body.appendChild(s);}</script></section></main><footer>© Ink by Hev · Marietta, GA · <a href="https://instagram.com/inkbyhev" rel="noopener" target="_blank">Instagram</a></footer><dialog id="lightbox"><button aria-label="Close image" class="close">Close ✕</button><img alt="Enlarged tattoo"/><video controls="" muted="" hidden="" playsinline="" preload="metadata"></video></dialog><script>const filters=document.querySelectorAll('.filter'),tiles=document.querySelectorAll('.tile');filters.forEach(b=>b.addEventListener('click',()=>{filters.forEach(x=>x.classList.remove('active'));b.classList.add('active');tiles.forEach(t=>t.hidden=b.dataset.filter!=='all'&&!t.dataset.tags.split(' ').includes(b.dataset.filter))}));const dlg=document.querySelector('#lightbox'),pic=dlg.querySelector('img'),vid=dlg.querySelector('video');vid.muted=true;vid.defaultMuted=true;vid.addEventListener('volumechange',()=>{if(!vid.muted)vid.muted=true});function closeLightbox(){vid.pause();vid.removeAttribute('src');vid.load();dlg.close()}tiles.forEach(t=>t.addEventListener('click',()=>{if(t.dataset.video){pic.hidden=true;vid.hidden=false;vid.src=t.dataset.video;vid.muted=true;vid.defaultMuted=true;vid.load()}else{vid.hidden=true;pic.hidden=false;pic.src=t.querySelector('img').src}dlg.showModal();if(t.dataset.video)vid.play().catch(()=>{})}));dlg.querySelector('.close').onclick=closeLightbox;dlg.addEventListener('click',e=>{if(e.target===dlg)closeLightbox()});dlg.addEventListener('close',()=>{vid.pause()});</script><script>
+/* Editable website copy managed in Pages CMS (content/website.json). */
+(async function loadWebsiteSettings(){
+  try {
+    const response = await fetch('/content/website.json', {cache:'no-cache'});
+    if (!response.ok) return;
+    const settings = await response.json();
+    const updateText = (selector, key) => {
+      const element = document.querySelector(selector);
+      if (element && typeof settings[key] === 'string') element.textContent = settings[key];
+    };
+    updateText('.hero h1', 'site_title');
+    updateText('.hero .sub', 'hero_subtitle');
+    updateText('#about h2', 'about_heading');
+    updateText('#about p', 'about_text');
+    updateText('#booking h2', 'booking_heading');
+    updateText('#booking .intro p', 'booking_description');
+  } catch (error) { console.warn('Website settings unavailable; displaying original text.', error); }
+})();
+</script><script>
+/* Portfolio entries are managed in Pages CMS and stored in GitHub. */
+(async function loadManagedTattoos(){
+  const gallery = document.querySelector('#tattoos .gallery');
+  if (!gallery) return;
+  const api = 'https://api.github.com/repos/inkbyhev/inkbyhev-website/contents/content/tattoos?ref=main';
+  const toAsset = (path) => {
+    if (typeof path !== 'string' || !path.trim()) return '';
+    if (/^https:\/\//i.test(path)) return path;
+    return '/' + path.replace(/^\/+/, '');
+  };
+  try {
+    const response = await fetch(api, {headers:{Accept:'application/vnd.github+json'}});
+    if (!response.ok) throw new Error('GitHub returned ' + response.status);
+    const files = (await response.json()).filter(file => file.type === 'file' && file.name.endsWith('.json'));
+    if (!files.length) return; // Keep existing portfolio until CMS entries exist.
+    const records = await Promise.all(files.map(async file => {
+      const res = await fetch(file.download_url);
+      return res.ok ? res.json() : null;
+    }));
+    const entries = records.filter(item => item && item.image);
+    if (!entries.length) return;
+    const fragment = document.createDocumentFragment();
+    entries.forEach((entry, index) => {
+      const tile = document.createElement('button');
+      tile.type = 'button';
+      tile.className = 'tile';
+      const videoUrl = toAsset(entry.video);
+      if (videoUrl) tile.classList.add('video-tile');
+      const category = String(entry.category || '').toLowerCase();
+      tile.dataset.tags = category === 'black-grey' || category.includes('grey') ? 'black-grey' : 'color';
+      const img = document.createElement('img');
+      img.src = toAsset(entry.image);
+      img.alt = entry.title || 'Tattoo portfolio artwork';
+      img.loading = 'lazy';
+      tile.setAttribute('aria-label', 'Open ' + img.alt);
+      tile.appendChild(img);
+      if (videoUrl) {
+        const playIcon = document.createElement('span');
+        playIcon.className = 'play-icon';
+        playIcon.textContent = '▶';
+        tile.appendChild(playIcon);
+      }
+      tile.addEventListener('click', () => {
+        vid.pause();
+        if (videoUrl) {
+          pic.hidden = true;
+          vid.hidden = false;
+          vid.muted = true;
+          vid.defaultMuted = true;
+          vid.src = videoUrl;
+          vid.load();
+        } else {
+          vid.hidden = true;
+          pic.hidden = false;
+          pic.src = img.src;
+          pic.alt = img.alt;
+        }
+        dlg.showModal();
+        if (videoUrl) vid.play().catch(() => {});
+      });
+      fragment.appendChild(tile);
+    });
+    gallery.replaceChildren(fragment);
+    const filtersEl = document.querySelector('#tattoos .filters');
+    if (filtersEl) {
+      filtersEl.innerHTML = '<button class="filter active" data-filter="all">All Work</button><button class="filter" data-filter="color">Color</button><button class="filter" data-filter="black-grey">Black &amp; Grey</button>';
+      const buttons = filtersEl.querySelectorAll('.filter');
+      buttons.forEach(button => button.addEventListener('click', () => {
+        buttons.forEach(b => b.classList.remove('active'));
+        button.classList.add('active');
+        gallery.querySelectorAll('.tile').forEach(tile => {
+          tile.hidden = button.dataset.filter !== 'all' && tile.dataset.tags !== button.dataset.filter;
+        });
+      }));
+    }
+  } catch (error) {
+    console.warn('CMS portfolio unavailable; keeping original gallery.', error);
+  }
+})();
+</script></body></html>
