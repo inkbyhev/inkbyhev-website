@@ -1,0 +1,6 @@
+{
+  "title": "Jellyfish",
+  "image": "/assets/Jelly-1.jpg",
+  "category": "paintings",
+  "medium": "Acrylic on Canvas"
+}
