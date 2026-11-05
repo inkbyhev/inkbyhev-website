@@ -45,10 +45,12 @@ content:
         label: Category
         type: select
         options:
-          - value: color
-            label: Color
-          - value: black-grey
-            label: Black & Grey
+          values:
+            - value: color
+              label: Color
+            - value: black-grey
+              label: Black & Grey
+
 
 
   - name: studio
