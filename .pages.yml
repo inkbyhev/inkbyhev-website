@@ -64,7 +64,6 @@ content:
     type: collection
     path: content/studio
     format: json
-    extension: json
     fields:
       - name: title
         label: Artwork Title
