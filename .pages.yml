@@ -1,0 +1,69 @@
+
+media:
+  input: assets
+  output: /assets
+
+content:
+  - name: website
+    label: Website Settings
+    type: file
+    path: content/website.json
+    format: json
+    fields:
+      - name: site_title
+        label: Website Title
+        type: string
+      - name: hero_subtitle
+        label: Hero Subtitle
+        type: string
+      - name: about_heading
+        label: About Heading
+        type: string
+      - name: about_text
+        label: About Description
+        type: text
+      - name: booking_heading
+        label: Booking Heading
+        type: string
+      - name: booking_description
+        label: Booking Description
+        type: text
+
+  - name: tattoos
+    label: Tattoo Portfolio
+    type: collection
+    path: content/tattoos
+    format: json
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: image
+        label: Image
+        type: image
+      - name: category
+        label: Category
+        type: select
+        options:
+          - label: Color
+            value: color
+          - label: Dark & Illustrative
+            value: dark
+          - label: Nature & Fantasy
+            value: nature
+
+  - name: studio
+    label: Art Studio
+    type: collection
+    path: content/studio
+    format: json
+    fields:
+      - name: title
+        label: Artwork Title
+        type: string
+      - name: image
+        label: Image
+        type: image
+      - name: description
+        label: Description
+        type: text
