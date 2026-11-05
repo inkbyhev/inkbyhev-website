@@ -45,12 +45,11 @@ content:
         label: Category
         type: select
         options:
-          - label: Color
-            value: color
-          - label: Dark & Illustrative
-            value: dark
-          - label: Nature & Fantasy
-            value: nature
+          - value: color
+            label: Color
+          - value: black-grey
+            label: Black & Grey
+
 
   - name: studio
     label: Art Studio
