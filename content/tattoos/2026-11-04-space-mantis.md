@@ -1,4 +1,5 @@
 {
   "title": "Space Mantis",
-  "image": "/assets/IMG_3968.jpg"
+  "image": "/assets/IMG_3968.jpg",
+  "category": "color"
 }
