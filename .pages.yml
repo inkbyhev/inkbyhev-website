@@ -64,6 +64,7 @@ content:
     type: collection
     path: content/studio
     format: json
+    filename: "{year}-{month}-{day}-{primary}.json"
     fields:
       - name: title
         label: Artwork Title
