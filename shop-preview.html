@@ -52,6 +52,12 @@ async function loadPrints() {
         price.textContent = currency.format(low / 100) + (low === high ? '' : '–' + currency.format(high / 100));
         card.append(price);
       }
+      if (print.name === 'Jellyfish Glow - Art Print') {
+        const checkout = document.createElement('a');
+        checkout.href = 'https://square.link/u/jWrUm7se';
+        checkout.textContent = 'Choose a size';
+        card.append(checkout);
+      }
       grid.append(card);
     }
     status.hidden = true;
