@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Art &amp; Prints | Ink by Hev</title>
+<style>
+body{background:#102b26;color:#eee4d2;font:16px/1.5 Arial,sans-serif;margin:0}
+main{max-width:1100px;margin:auto;padding:36px 24px}
+h1,h2{font-family:Georgia,serif;font-weight:normal}
+a{color:#d4a96b}
+#prints{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,250px),1fr));gap:24px}
+article{border:1px solid #d4a96b66;padding:16px}
+article img{display:block;width:100%;aspect-ratio:1;object-fit:contain}
+article h2{font-size:1.25rem}
+</style>
+<main>
+<a href="/">Ink by Hev</a>
+<h1>Art &amp; Prints</h1>
+<p>Shop preview. Checkout is still being set up.</p>
+<p id="status" role="status">Loading prints…</p>
+<div id="prints"></div>
+</main>
+<script>
+async function loadPrints() {
+  const status = document.querySelector('#status');
+  const grid = document.querySelector('#prints');
+  const currency = new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' });
+  try {
+    const response = await fetch('/api/square/catalog-check');
+    const { prints } = await response.json();
+    if (!response.ok || !Array.isArray(prints)) throw new Error('Catalog unavailable');
+    if (!prints.length) {
+      status.textContent = 'No prints available right now.';
+      return;
+    }
+    for (const print of prints) {
+      const card = document.createElement('article');
+      const name = document.createElement('h2');
+      name.textContent = print.name;
+      if (print.image) {
+        const photo = document.createElement('img');
+        photo.src = print.image;
+        photo.alt = print.name;
+        photo.loading = 'lazy';
+        card.append(photo);
+      }
+      card.append(name);
+      if (print.prices.length) {
+        const price = document.createElement('p');
+        const low = Math.min(...print.prices);
+        const high = Math.max(...print.prices);
+        price.textContent = currency.format(low / 100) + (low === high ? '' : '–' + currency.format(high / 100));
+        card.append(price);
+      }
+      if (print.description) {
+        const description = document.createElement('p');
+        description.textContent = print.description;
+        card.append(description);
+      }
+      grid.append(card);
+    }
+    status.hidden = true;
+  } catch {
+    status.textContent = 'Prints are temporarily unavailable.';
+  }
+}
+loadPrints();
+</script>
+</html>
