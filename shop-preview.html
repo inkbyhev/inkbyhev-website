@@ -52,11 +52,6 @@ async function loadPrints() {
         price.textContent = currency.format(low / 100) + (low === high ? '' : '–' + currency.format(high / 100));
         card.append(price);
       }
-      if (print.description) {
-        const description = document.createElement('p');
-        description.textContent = print.description;
-        card.append(description);
-      }
       grid.append(card);
     }
     status.hidden = true;
