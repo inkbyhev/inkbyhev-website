@@ -1,4 +1,4 @@
-// Preview-only check. Return a count without exposing catalog details.
+// Preview smoke test. Expose only the first-page item count.
 export async function onRequestGet({ env }) {
   const reply = (status, body) => Response.json(body, {
     status,
