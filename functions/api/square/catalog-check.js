@@ -9,10 +9,11 @@ export async function onRequestGet({ env }) {
     return reply(503, { ok: false, reason: "square_token_missing" });
   }
 
+  let stage = "request";
   try {
     const response = await fetch("https://connect.squareup.com/v2/catalog/list?types=ITEM", {
       headers: {
-        Authorization: `Bearer ${env.SQUARE_CATALOG_TOKEN}`,
+        Authorization: `Bearer ${env.SQUARE_CATALOG_TOKEN.trim()}`,
         "Square-Version": "2026-09-16",
         Accept: "application/json",
       },
@@ -22,9 +23,10 @@ export async function onRequestGet({ env }) {
     if (!response.ok) {
       return reply(502, { ok: false, reason: "square_request_failed", squareStatus: response.status });
     }
+    stage = "decode";
     const catalog = await response.json();
     return reply(200, { ok: true, itemCountOnFirstPage: catalog.objects?.length ?? 0 });
-  } catch {
-    return reply(502, { ok: false, reason: "square_unreachable" });
+  } catch (error) {
+    return reply(502, { ok: false, reason: "square_unreachable", stage, errorType: error.name });
   }
 }
