@@ -9,16 +9,20 @@ export async function onRequestGet({ env }) {
     return reply(503, { ok: false, reason: "square_token_missing" });
   }
 
+  const token = env.SQUARE_CATALOG_TOKEN.trim();
+  if (!token || /[^\x21-\x7e]/.test(token)) {
+    return reply(503, { ok: false, reason: "square_token_contains_invalid_characters" });
+  }
+
   let stage = "request";
   try {
     const response = await fetch("https://connect.squareup.com/v2/catalog/list?types=ITEM", {
       headers: {
-        Authorization: `Bearer ${env.SQUARE_CATALOG_TOKEN.trim()}`,
+        Authorization: `Bearer ${token}`,
         "Square-Version": "2026-09-16",
         Accept: "application/json",
       },
-      redirect: "error",
-      signal: AbortSignal.timeout(10000),
+      redirect: "manual",
     });
     if (!response.ok) {
       return reply(502, { ok: false, reason: "square_request_failed", squareStatus: response.status });
