@@ -1,3 +1,4 @@
+// Preview-only check. Return a count without exposing catalog details.
 export async function onRequestGet({ env }) {
   const reply = (status, body) => Response.json(body, {
     status,
