@@ -1,6 +1,7 @@
 {
-  "title": "angel",
+  "title": "zack stone angel",
   "video": "/assets/Angel.mp4",
+  "keep_silent": true,
   "thumbnail": "/assets/angel.png",
   "category": "black-grey"
 }
