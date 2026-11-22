@@ -21,6 +21,10 @@ article h2{font-size:1.25rem}
 <div id="prints"></div>
 </main>
 <script>
+const checkoutLinks = new Map([
+  ['Jellyfish Glow - Art Print', 'https://square.link/u/jWrUm7se'],
+  ['Becoming - Art Print', 'https://square.link/u/zpbD95PX'],
+]);
 async function loadPrints() {
   const status = document.querySelector('#status');
   const grid = document.querySelector('#prints');
@@ -52,9 +56,10 @@ async function loadPrints() {
         price.textContent = currency.format(low / 100) + (low === high ? '' : '–' + currency.format(high / 100));
         card.append(price);
       }
-      if (print.name === 'Jellyfish Glow - Art Print') {
+      const checkoutUrl = checkoutLinks.get(print.name);
+      if (checkoutUrl) {
         const checkout = document.createElement('a');
-        checkout.href = 'https://square.link/u/jWrUm7se';
+        checkout.href = checkoutUrl;
         checkout.textContent = 'Choose a size';
         card.append(checkout);
       }
