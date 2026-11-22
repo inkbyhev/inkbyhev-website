@@ -1,4 +1,4 @@
-// Preview smoke test. Expose only the first-page item count.
+// Return only the fields needed for the shop preview.
 export async function onRequestGet({ env }) {
   const reply = (status, body) => Response.json(body, {
     status,
@@ -16,7 +16,7 @@ export async function onRequestGet({ env }) {
 
   let stage = "request";
   try {
-    const response = await fetch("https://connect.squareup.com/v2/catalog/list?types=ITEM", {
+    const response = await fetch("https://connect.squareup.com/v2/catalog/list?types=ITEM%2CIMAGE", {
       headers: {
         Authorization: `Bearer ${token}`,
         "Square-Version": "2026-09-16",
@@ -29,7 +29,20 @@ export async function onRequestGet({ env }) {
     }
     stage = "decode";
     const catalog = await response.json();
-    return reply(200, { ok: true, itemCountOnFirstPage: catalog.objects?.length ?? 0 });
+    const objects = catalog.objects ?? [];
+    const images = new Map(objects.filter(object => object.type === "IMAGE")
+      .map(object => [object.id, object.image_data?.url]));
+    const prints = objects.filter(object => object.type === "ITEM" && !object.item_data?.is_archived)
+      .map(({ item_data: item }) => ({
+        name: item.name,
+        description: item.description_plaintext ?? item.description ?? "",
+        image: (item.image_ids ?? []).map(id => images.get(id))
+          .find(url => typeof url === "string" && url.startsWith("https://")) ?? null,
+        prices: (item.variations ?? []).map(variation => variation.item_variation_data?.price_money)
+          .filter(price => Number.isSafeInteger(price?.amount) && price.currency === "USD")
+          .map(price => price.amount),
+      }));
+    return reply(200, { ok: true, prints });
   } catch (error) {
     return reply(502, { ok: false, reason: "square_unreachable", stage, errorType: error.name });
   }
