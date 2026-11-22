@@ -34,7 +34,8 @@ export async function onRequestGet({ env }) {
       .map(object => [object.id, object.image_data?.url]));
     const prints = objects.filter(object => object.type === "ITEM"
       && !object.item_data?.is_archived
-      && object.item_data?.name?.endsWith(" - Art Print"))
+      && object.item_data?.product_type !== "APPOINTMENTS_SERVICE"
+      && object.item_data?.name !== "Haircut (example service)")
       .map(({ item_data: item }) => ({
         name: item.name,
         description: item.description_plaintext ?? item.description ?? "",
