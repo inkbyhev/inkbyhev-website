@@ -135,6 +135,11 @@ content:
         label: Video
         type: file
         required: false
+      - name: keep_silent
+        label: Keep this video silent
+        type: boolean
+        default: false
+        required: false
       - name: thumbnail
         label: Video Thumbnail (JPG or PNG)
         type: image
@@ -166,6 +171,11 @@ content:
       - name: video
         label: Video
         type: file
+        required: false
+      - name: keep_silent
+        label: Keep this video silent
+        type: boolean
+        default: false
         required: false
       - name: thumbnail
         label: Video Thumbnail (JPG or PNG)
