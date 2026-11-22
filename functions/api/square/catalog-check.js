@@ -32,7 +32,9 @@ export async function onRequestGet({ env }) {
     const objects = catalog.objects ?? [];
     const images = new Map(objects.filter(object => object.type === "IMAGE")
       .map(object => [object.id, object.image_data?.url]));
-    const prints = objects.filter(object => object.type === "ITEM" && !object.item_data?.is_archived)
+    const prints = objects.filter(object => object.type === "ITEM"
+      && !object.item_data?.is_archived
+      && object.item_data?.name?.endsWith(" - Art Print"))
       .map(({ item_data: item }) => ({
         name: item.name,
         description: item.description_plaintext ?? item.description ?? "",
