@@ -3,5 +3,6 @@
   "image": "/assets/mirror.jpeg",
   "keep_silent": false,
   "category": "drawings",
+  "display_order": 21,
   "medium": "Acrylic Marker"
 }
