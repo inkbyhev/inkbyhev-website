@@ -3,5 +3,6 @@
   "image": "/assets/seadragon (Medium).png",
   "keep_silent": false,
   "category": "paintings",
+  "display_order": 26,
   "medium": "Watercolor"
 }
