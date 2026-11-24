@@ -1,6 +1,8 @@
 {
   "title": "Imposter Syndrome",
   "image": "/assets/Imposter1.jpg",
+  "keep_silent": false,
   "category": "drawings",
+  "display_order": 11,
   "medium": "Digital Art"
 }
