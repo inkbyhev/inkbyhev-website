@@ -3,5 +3,6 @@
   "image": "/assets/bindi (Medium).png",
   "keep_silent": false,
   "category": "mixed-media",
+  "display_order": 32,
   "medium": "Cyanotype"
 }
