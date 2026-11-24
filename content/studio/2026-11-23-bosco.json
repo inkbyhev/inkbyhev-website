@@ -3,5 +3,6 @@
   "image": "/assets/bosco (Medium).png",
   "keep_silent": false,
   "category": "paintings",
+  "display_order": 10,
   "medium": "Watercolor"
 }

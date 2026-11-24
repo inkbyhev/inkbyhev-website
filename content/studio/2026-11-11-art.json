@@ -3,5 +3,6 @@
   "image": "/assets/...art (2)-1.jpeg",
   "keep_silent": false,
   "category": "paintings",
+  "display_order": 3,
   "medium": "Acrylic on Canvas Paper"
 }

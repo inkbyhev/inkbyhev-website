@@ -3,5 +3,6 @@
   "image": "/assets/27.jpeg",
   "keep_silent": false,
   "category": "paintings",
+  "display_order": 2,
   "medium": "Watercolor"
 }
