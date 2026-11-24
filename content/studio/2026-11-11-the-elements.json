@@ -1,6 +1,8 @@
 {
   "title": "The Elements",
   "image": "/assets/paintins/1.The Elements.png",
+  "keep_silent": false,
   "category": "paintings",
+  "display_order": 7,
   "medium": "Acrylic on Canvas Paper"
 }
