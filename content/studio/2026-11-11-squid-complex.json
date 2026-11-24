@@ -1,6 +1,8 @@
 {
   "title": "Squid Complex",
   "image": "/assets/Squid 1.jpg",
+  "keep_silent": false,
   "category": "drawings",
+  "display_order": 13,
   "medium": "Digital Art"
 }
