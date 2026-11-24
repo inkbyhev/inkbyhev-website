@@ -3,5 +3,6 @@
   "image": "/assets/sunflower (Medium).png",
   "keep_silent": false,
   "category": "drawings",
+  "display_order": 20,
   "medium": "Acrylic marker"
 }
