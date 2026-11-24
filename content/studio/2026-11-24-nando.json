@@ -3,5 +3,6 @@
   "image": "/assets/nando (Medium).png",
   "keep_silent": false,
   "category": "mixed-media",
+  "display_order": 30,
   "medium": "Cyanotype"
 }
