@@ -1,6 +1,8 @@
 {
   "title": "Oracle Bunny",
   "image": "/assets/Bunny 1.jpg",
+  "keep_silent": false,
   "category": "drawings",
+  "display_order": 12,
   "medium": "Digital Art"
 }
