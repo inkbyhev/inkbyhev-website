@@ -1,6 +1,8 @@
 {
   "title": "Becoming",
   "image": "/assets/Becoming1-1.jpg",
+  "keep_silent": false,
   "category": "paintings",
+  "display_order": 4,
   "medium": "Acrylic on Canvas"
 }
