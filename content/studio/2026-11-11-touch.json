@@ -1,6 +1,7 @@
 {
   "title": "Touch",
-  "image": "/assets/paintins/5.Touch.png",
+  "image": "/assets/touch.jpeg",
+  "keep_silent": false,
   "category": "paintings",
   "medium": "Acrylic on Canvas Paper"
 }
