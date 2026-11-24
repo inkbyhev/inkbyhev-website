@@ -16,6 +16,20 @@ content:
         options:
           multiple: true
           unique: true
+  - name: studio_order
+    label: Reorder Art Studio
+    type: file
+    path: content/studio-order.json
+    format: json
+    fields:
+      - name: images
+        label: Art Studio Order
+        description: "Drag the thumbnails into place, then save. Add a new piece's image here to place it in the order."
+        type: image
+        required: false
+        options:
+          multiple: true
+          unique: true
   - name: website
     label: Website Settings
     type: file

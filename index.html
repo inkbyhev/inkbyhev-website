@@ -147,6 +147,19 @@ function sortGalleryByDisplayOrder(entries) {
     return first < second ? -1 : 1;
   });
 }
+async function applyGalleryImageOrder(entries, path, preview, toAsset) {
+  const order = await fetch(path, {cache: 'no-cache'})
+    .then(async response => response.ok ? await response.json() : null)
+    .catch(() => null);
+  if (!Array.isArray(order?.images)) return;
+  const positions = new Map(order.images.map((image, index) => [toAsset(image), index]));
+  entries.sort((a, b) => {
+    const first = positions.get(preview(a)) ?? Infinity;
+    const second = positions.get(preview(b)) ?? Infinity;
+    if (first === second) return 0;
+    return first < second ? -1 : 1;
+  });
+}
 (async function loadManagedTattoos(){
   const gallery = document.querySelector('#tattoos .gallery');
   if (!gallery) return;
@@ -168,19 +181,8 @@ function sortGalleryByDisplayOrder(entries) {
     const entries = records.filter(item => item && (item.image || item.thumbnail));
     if (!entries.length) return;
     sortGalleryByDisplayOrder(entries);
-    const orderResponse = await fetch('/content/tattoo-order.json', {cache: 'no-cache'})
-      .then(async response => response.ok ? await response.json() : null)
-      .catch(() => null);
     const preview = entry => toAsset((entry.video && entry.thumbnail) || entry.image || entry.thumbnail);
-    if (Array.isArray(orderResponse?.images)) {
-      const positions = new Map(orderResponse.images.map((image, index) => [toAsset(image), index]));
-      entries.sort((a, b) => {
-        const first = positions.get(preview(a)) ?? Infinity;
-        const second = positions.get(preview(b)) ?? Infinity;
-        if (first === second) return 0;
-        return first < second ? -1 : 1;
-      });
-    }
+    await applyGalleryImageOrder(entries, '/content/tattoo-order.json', preview, toAsset);
     const fragment = document.createDocumentFragment();
     entries.forEach((entry, index) => {
       const tile = document.createElement('button');
@@ -265,6 +267,7 @@ function sortGalleryByDisplayOrder(entries) {
     const records=await Promise.all(files.map(async f=>{try{const r=await fetch(f.download_url);return r.ok?await r.json():null}catch{return null}}));
     const entries=records.filter(e=>e&&typeof e==='object'&&(e.image||e.video));
     sortGalleryByDisplayOrder(entries);
+    await applyGalleryImageOrder(entries, '/content/studio-order.json', entry => toAsset(entry.image || entry.thumbnail), toAsset);
     if(!entries.length){status.textContent='More artwork coming soon.';return}
     const fragment=document.createDocumentFragment();
     entries.forEach((entry,index)=>{
