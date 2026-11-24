@@ -3,5 +3,6 @@
   "image": "/assets/touch.jpeg",
   "keep_silent": false,
   "category": "paintings",
+  "display_order": 8,
   "medium": "Acrylic on Canvas Paper"
 }
