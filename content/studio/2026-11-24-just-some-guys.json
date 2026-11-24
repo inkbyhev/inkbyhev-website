@@ -3,5 +3,6 @@
   "image": "/assets/faces2.jpeg",
   "keep_silent": false,
   "category": "drawings",
+  "display_order": 27,
   "medium": "Acrylic marker"
 }
