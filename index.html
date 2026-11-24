@@ -168,6 +168,19 @@ function sortGalleryByDisplayOrder(entries) {
     const entries = records.filter(item => item && (item.image || item.thumbnail));
     if (!entries.length) return;
     sortGalleryByDisplayOrder(entries);
+    const orderResponse = await fetch('/content/tattoo-order.json', {cache: 'no-cache'})
+      .then(async response => response.ok ? await response.json() : null)
+      .catch(() => null);
+    const preview = entry => toAsset((entry.video && entry.thumbnail) || entry.image || entry.thumbnail);
+    if (Array.isArray(orderResponse?.images)) {
+      const positions = new Map(orderResponse.images.map((image, index) => [toAsset(image), index]));
+      entries.sort((a, b) => {
+        const first = positions.get(preview(a)) ?? Infinity;
+        const second = positions.get(preview(b)) ?? Infinity;
+        if (first === second) return 0;
+        return first < second ? -1 : 1;
+      });
+    }
     const fragment = document.createDocumentFragment();
     entries.forEach((entry, index) => {
       const tile = document.createElement('button');
@@ -178,7 +191,7 @@ function sortGalleryByDisplayOrder(entries) {
       const category = String(entry.category || '').toLowerCase();
       tile.dataset.tags = category === 'black-grey' || category.includes('grey') ? 'black-grey' : 'color';
       const img = document.createElement('img');
-      img.src = toAsset((videoUrl && entry.thumbnail) || entry.image || entry.thumbnail);
+      img.src = preview(entry);
       img.alt = entry.title || 'Tattoo portfolio artwork';
       img.loading = 'lazy';
       tile.setAttribute('aria-label', 'Open ' + img.alt);

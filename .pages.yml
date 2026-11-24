@@ -2,6 +2,20 @@ media:
   input: assets
   output: /assets
 content:
+  - name: tattoo_order
+    label: Reorder Tattoos
+    type: file
+    path: content/tattoo-order.json
+    format: json
+    fields:
+      - name: images
+        label: Tattoo Order
+        description: "Drag the thumbnails into place, then save. Add a new tattoo's thumbnail here to place it in the order."
+        type: image
+        required: false
+        options:
+          multiple: true
+          unique: true
   - name: website
     label: Website Settings
     type: file
