@@ -1,7 +1,7 @@
 {
-  "title": "cowboy",
-  "image": "/assets/video-5.jpg",
-  "video": "/assets/video-5.mp4",
-  "thumbnail": "/assets/chez.jpeg",
-  "category": "black-grey"
+  "title": "cowgirl",
+  "image": "/assets/video-4.jpg",
+  "video": "/assets/video-4.mp4",
+  "thumbnail": "/assets/cowgirl.png",
+  "category": "color"
 }
