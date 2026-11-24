@@ -3,5 +3,6 @@
   "image": "/assets/crysanthemum (Medium).png",
   "keep_silent": false,
   "category": "paintings",
+  "display_order": 14,
   "medium": "Watercolor"
 }
