@@ -144,6 +144,11 @@ content:
         label: Video Thumbnail (JPG or PNG)
         type: image
         required: false
+      - name: display_order
+        label: Display Order
+        type: number
+        required: false
+        description: "Lower numbers show first. Leave blank to list this piece after numbered artwork."
       - name: category
         label: Category
         type: select
@@ -192,6 +197,11 @@ content:
               label: Drawings
             - value: mixed-media
               label: Mixed Media
+      - name: display_order
+        label: Display Order
+        type: number
+        required: false
+        description: "Lower numbers show first. Leave blank to list this piece after numbered artwork."
       - name: medium
         label: Medium
         type: string

@@ -1,6 +1,8 @@
 {
   "title": "Jellyfish",
   "image": "/assets/Jelly-1.jpg",
+  "keep_silent": false,
   "category": "paintings",
+  "display_order": 1,
   "medium": "Acrylic on Canvas"
 }
