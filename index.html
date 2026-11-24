@@ -139,6 +139,14 @@ footer{background:#0b1411;border-color:#b58a4f66}
   } catch (error) { console.warn('Website settings unavailable; displaying original text.', error); }
 })();</script><script>
 /* Portfolio entries are managed in Pages CMS and stored in GitHub. */
+function sortGalleryByDisplayOrder(entries) {
+  const order = (entry) => Number.isFinite(entry.display_order) ? entry.display_order : Infinity;
+  entries.sort((a, b) => {
+    const first = order(a), second = order(b);
+    if (first === second) return 0;
+    return first < second ? -1 : 1;
+  });
+}
 (async function loadManagedTattoos(){
   const gallery = document.querySelector('#tattoos .gallery');
   if (!gallery) return;
@@ -159,6 +167,7 @@ footer{background:#0b1411;border-color:#b58a4f66}
     }));
     const entries = records.filter(item => item && (item.image || item.thumbnail));
     if (!entries.length) return;
+    sortGalleryByDisplayOrder(entries);
     const fragment = document.createDocumentFragment();
     entries.forEach((entry, index) => {
       const tile = document.createElement('button');
@@ -242,12 +251,7 @@ footer{background:#0b1411;border-color:#b58a4f66}
     if(!files.length){status.textContent='More artwork coming soon.';return}
     const records=await Promise.all(files.map(async f=>{try{const r=await fetch(f.download_url);return r.ok?await r.json():null}catch{return null}}));
     const entries=records.filter(e=>e&&typeof e==='object'&&(e.image||e.video));
-    const displayOrder=(entry)=>Number.isFinite(entry.display_order) ? entry.display_order : Infinity;
-    entries.sort((a,b)=>{
-      const first=displayOrder(a),second=displayOrder(b);
-      if(first===second)return 0;
-      return first<second ? -1 : 1;
-    });
+    sortGalleryByDisplayOrder(entries);
     if(!entries.length){status.textContent='More artwork coming soon.';return}
     const fragment=document.createDocumentFragment();
     entries.forEach((entry,index)=>{
